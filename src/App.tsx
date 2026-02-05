@@ -10,7 +10,7 @@ export default function App() {
         style={{
           minHeight: "100vh",
           background:
-            "linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6)",
+            "linear-gradient(135deg, #111111, #1f2937, #000000)",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -18,13 +18,30 @@ export default function App() {
           color: "white",
           fontFamily: "sans-serif",
           textAlign: "center",
+          padding: 40,
         }}
       >
-        <h1 style={{ fontSize: 62, color: "#ff003c" }}>Adarsh  Jain Aura Flow </h1>
-        <h2 style={{ fontSize: 62,  color: "green" }}>Visual Decision Flow Builder</h2>
-        <p style={{ fontSize: 28, opacity: 0.9, color: "black"}}>
+        <h1
+          style={{
+            fontSize: 62,
+            color: "red",
+            background: "black",
+            padding: "16px 28px",
+            borderRadius: 12,
+          }}
+        >
+          Adarsh Jain Frontend Aura Flow Project 
+        </h1>
 
-            Workflow Builder is a visual tool that allows users to design and manage decision-based workflows with ease. Using a node-based interface, users can create action steps, define conditional branches, and control the flow from start to completion. This dashboard focuses on clarity, flexibility, and structured logic, enabling seamless workflow creation without relying on external UI or diagram libraries.
+        <h2 style={{ fontSize: 52, color: "#38bdf8" }}>
+          Visual Decision Flow Builder
+        </h2>
+
+        <p style={{ fontSize: 22, opacity: 0.9, color: "#e5e7eb", maxWidth: 1100 }}>
+          Workflow Builder is a visual tool that allows users to design and manage
+          decision-based workflows with ease. Using a node-based interface, users
+          can create action steps, define conditional branches, and control the
+          flow from start to completion.
         </p>
 
         <button
@@ -34,8 +51,8 @@ export default function App() {
             padding: "14px 28px",
             fontSize: 16,
             background: "black",
-            color: "Red",
-            border: "none",
+            color: "red",
+            border: "1px solid red",
             borderRadius: 8,
             cursor: "pointer",
           }}
