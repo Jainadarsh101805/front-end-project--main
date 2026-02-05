@@ -20,7 +20,7 @@ export default function App() {
           textAlign: "center",
         }}
       >
-        <h1 style={{ fontSize: 62, color: "#ff003c" }}>Akarsh Aura Flow </h1>
+        <h1 style={{ fontSize: 62, color: "#ff003c" }}>Adarsh  Jain Aura Flow </h1>
         <h2 style={{ fontSize: 62,  color: "green" }}>Visual Decision Flow Builder</h2>
         <p style={{ fontSize: 28, opacity: 0.9, color: "black"}}>
 
