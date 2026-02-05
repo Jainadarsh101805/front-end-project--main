@@ -52,7 +52,7 @@ export default function WorkflowCanvas() {
     addNode("action");
   };
 
-  // NO → close branch (do nothing else)
+  // NO → close branch
   const handleNo = (branchId: string) => {
     deleteNode(branchId);
     setBotMessage("No path selected. Branch closed.");
@@ -67,8 +67,8 @@ export default function WorkflowCanvas() {
         gap: 30,
         color: "white",
         background: `
-          linear-gradient(135deg, rgba(2,6,23,0.92), rgba(15,23,42,0.95)),
-          url("https://images.unsplash.com/photo-1535378620166-273708d44e4c")
+          linear-gradient(135deg, rgba(0,0,0,0.92), rgba(20,0,0,0.95)),
+          url("https://images.unsplash.com/photo-1557683316-973673baf926")
         `,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -78,15 +78,17 @@ export default function WorkflowCanvas() {
       <div
         style={{
           width: 280,
-          background: "rgba(2,6,23,0.9)",
+          background: "rgba(0,0,0,0.85)",
           borderRadius: 14,
           padding: 20,
-          boxShadow: "0 0 30px rgba(34,197,94,0.25)",
+          boxShadow: "0 0 30px rgba(239,68,68,0.35)",
           height: "fit-content",
+          border: "1px solid rgba(239,68,68,0.35)",
         }}
       >
-        <h3>🤖 Flow Assistant</h3>
-        <p style={{ fontSize: 13, opacity: 0.8 }}>
+        <h3 style={{ color: "#ef4444" }}>🤖 Flow Assistant</h3>
+
+        <p style={{ fontSize: 13, opacity: 0.85 }}>
           Design decision workflows visually.
         </p>
 
@@ -101,9 +103,10 @@ export default function WorkflowCanvas() {
           style={{
             marginTop: 14,
             padding: 10,
-            background: "rgba(34,197,94,0.15)",
+            background: "rgba(239,68,68,0.15)",
             borderRadius: 8,
             fontSize: 12,
+            border: "1px solid rgba(239,68,68,0.35)",
           }}
         >
           Tip: Start → Action → Decision → Action
@@ -114,14 +117,16 @@ export default function WorkflowCanvas() {
       <div
         style={{
           flex: 1,
-          background: "rgba(255,255,255,0.04)",
-          border: "1px dashed rgba(255,255,255,0.25)",
+          background: "rgba(0,0,0,0.55)",
+          border: "1px dashed rgba(239,68,68,0.45)",
           borderRadius: 16,
           padding: 30,
+          backdropFilter: "blur(6px)",
         }}
       >
-        <h2>🧩 Workflow Designer</h2>
-        <p style={{ opacity: 0.7, marginBottom: 20 }}>
+        <h2 style={{ color: "#f87171" }}>🧩 Workflow Designer</h2>
+
+        <p style={{ opacity: 0.75, marginBottom: 20 }}>
           Build and visualize decision flows without code.
         </p>
 
@@ -151,32 +156,34 @@ export default function WorkflowCanvas() {
           style={{
             marginTop: 26,
             padding: "12px 18px",
-            background: "#22c55e",
-            color: "black",
+            background: "#ef4444",
+            color: "white",
             border: "none",
             borderRadius: 8,
             cursor: "pointer",
-            fontWeight: 600,
+            fontWeight: 700,
+            letterSpacing: 0.5,
           }}
         >
           💾 Save Workflow
         </button>
       </div>
 
-      {/* SUBTLE BOT BADGE */}
+      {/* BOT BADGE */}
       <div
         style={{
           position: "fixed",
           bottom: 20,
           right: 20,
-          background: "rgba(2,6,23,0.9)",
+          background: "rgba(0,0,0,0.9)",
           padding: "10px 14px",
           borderRadius: 999,
           fontSize: 12,
-          boxShadow: "0 0 20px rgba(34,197,94,0.35)",
+          border: "1px solid rgba(239,68,68,0.45)",
+          boxShadow: "0 0 20px rgba(239,68,68,0.45)",
         }}
       >
-        🤖 <span style={{ opacity: 0.85 }}>{botMessage}</span>
+        🤖 <span style={{ opacity: 0.9 }}>{botMessage}</span>
       </div>
     </div>
   );
