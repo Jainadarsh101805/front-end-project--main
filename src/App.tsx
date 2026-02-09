@@ -30,11 +30,11 @@ export default function App() {
             borderRadius: 12,
           }}
         >
-          Adarsh Jain Frontend Aura Flow Project 
+          Adarsh Jain Frontend  Project 
         </h1>
 
         <h2 style={{ fontSize: 52, color: "#38bdf8" }}>
-          Visual Decision Flow Builder
+          Smart Decision Flow System
         </h2>
 
         <p style={{ fontSize: 22, opacity: 0.9, color: "#e5e7eb", maxWidth: 1100 }}>
