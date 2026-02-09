@@ -38,10 +38,9 @@ export default function App() {
         </h2>
 
         <p style={{ fontSize: 22, opacity: 0.9, color: "#e5e7eb", maxWidth: 1100 }}>
-          Workflow Builder is a visual tool that allows users to design and manage
-          decision-based workflows with ease. Using a node-based interface, users
-          can create action steps, define conditional branches, and control the
-          flow from start to completion.
+         This project allows you to visually design workflows using
+          actions and decision branches. It is built to be simple,
+          user-friendly, and practical for real-world logic building.
         </p>
 
         <button
