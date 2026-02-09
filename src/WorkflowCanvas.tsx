@@ -14,10 +14,6 @@ export default function WorkflowCanvas() {
     { id: "start-1", type: "start", label: "Start" },
   ]);
 
-  const [botMessage, setBotMessage] = useState(
-    "Click +Action or +Branch to begin"
-  );
-
   // ADD NODE
   const addNode = (type: NodeType) => {
     setNodes((prev) => [
@@ -33,18 +29,11 @@ export default function WorkflowCanvas() {
             : "Start",
       },
     ]);
-
-    setBotMessage(
-      type === "action"
-        ? "Action added. Continue building."
-        : "Decision added. Choose Yes or No."
-    );
   };
 
   // DELETE NODE
   const deleteNode = (id: string) => {
     setNodes((prev) => prev.filter((n) => n.id !== id));
-    setBotMessage("Node removed.");
   };
 
   // YES → add next action
@@ -55,7 +44,6 @@ export default function WorkflowCanvas() {
   // NO → close branch
   const handleNo = (branchId: string) => {
     deleteNode(branchId);
-    setBotMessage("No path selected. Branch closed.");
   };
 
   return (
@@ -64,7 +52,6 @@ export default function WorkflowCanvas() {
         minHeight: "100vh",
         padding: 40,
         display: "flex",
-        gap: 30,
         color: "white",
         background: `
           linear-gradient(135deg, rgba(0,0,0,0.92), rgba(20,0,0,0.95)),
@@ -74,45 +61,6 @@ export default function WorkflowCanvas() {
         backgroundPosition: "center",
       }}
     >
-      {/* LEFT ASSISTANT PANEL */}
-      <div
-        style={{
-          width: 280,
-          background: "rgba(0,0,0,0.85)",
-          borderRadius: 14,
-          padding: 20,
-          boxShadow: "0 0 30px rgba(239,68,68,0.35)",
-          height: "fit-content",
-          border: "1px solid rgba(239,68,68,0.35)",
-        }}
-      >
-        <h3 style={{ color: "#ef4444" }}>🤖 Flow Assistant</h3>
-
-        <p style={{ fontSize: 13, opacity: 0.85 }}>
-          Design decision workflows visually.
-        </p>
-
-        <ul style={{ fontSize: 13, marginTop: 10, lineHeight: 1.7 }}>
-          <li>➕ Add actions</li>
-          <li>🔀 Create decisions</li>
-          <li>🧠 Model logic clearly</li>
-          <li>💾 Export workflow JSON</li>
-        </ul>
-
-        <div
-          style={{
-            marginTop: 14,
-            padding: 10,
-            background: "rgba(239,68,68,0.15)",
-            borderRadius: 8,
-            fontSize: 12,
-            border: "1px solid rgba(239,68,68,0.35)",
-          }}
-        >
-          Tip: Start → Action → Decision → Action
-        </div>
-      </div>
-
       {/* WORKFLOW CANVAS */}
       <div
         style={{
@@ -151,7 +99,6 @@ export default function WorkflowCanvas() {
           onClick={() => {
             console.log("Workflow JSON:", nodes);
             alert("Workflow saved to console");
-            setBotMessage("Workflow saved successfully.");
           }}
           style={{
             marginTop: 26,
@@ -167,23 +114,6 @@ export default function WorkflowCanvas() {
         >
           💾 Save Workflow
         </button>
-      </div>
-
-      {/* BOT BADGE */}
-      <div
-        style={{
-          position: "fixed",
-          bottom: 20,
-          right: 20,
-          background: "rgba(0,0,0,0.9)",
-          padding: "10px 14px",
-          borderRadius: 999,
-          fontSize: 12,
-          border: "1px solid rgba(239,68,68,0.45)",
-          boxShadow: "0 0 20px rgba(239,68,68,0.45)",
-        }}
-      >
-        🤖 <span style={{ opacity: 0.9 }}>{botMessage}</span>
       </div>
     </div>
   );
